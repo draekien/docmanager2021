@@ -1,20 +1,18 @@
 /** @jsxImportSource theme-ui */
+import { DraekienUi } from 'draekien-ui';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-
-import { BrowserRouter as Router } from 'react-router-dom';
-import { ThemeProvider } from 'theme-ui';
+import { HashRouter as Router } from 'react-router-dom';
 
 import App from './app';
-import { DraekienTheme } from './theme/theme';
 
 function render() {
   ReactDOM.render(
     <React.StrictMode>
       <Router>
-        <ThemeProvider theme={DraekienTheme}>
+        <DraekienUi useToastContext>
           <App />
-        </ThemeProvider>
+        </DraekienUi>
       </Router>
     </React.StrictMode>,
     document.getElementById('root')
